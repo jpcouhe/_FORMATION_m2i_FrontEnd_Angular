@@ -1,0 +1,23 @@
+
+<div *ngIf="tutorials;else noResult">
+  <ul>
+   <!-- <li *ngFor="let tuto of tutorials; let i = index" (click)="setActiveTutorial(tuto, i)">{{tuto.title}}</li>-->
+    <li *ngFor="let tuto of tutorials"><a routerLink="details/{{tuto.id}}">{{tuto.title}}</a></li>
+  </ul>
+  <button (click)="removeAllTutorials()">Delete All</button>
+</div>
+<ng-template #noResult>No tutorial found</ng-template>
+<app-tutorial-details [viewMode]="true" [currentTutorial]="currentTutorial"></app-tutorial-details>
+<!--
+
+
+
+//li a routerLink 'details/
+<ul *ngFor="let tuto of tutorial$ |async">
+  <li>{{tuto.title}}</li>
+</ul>
+-->
+
+
+
+
